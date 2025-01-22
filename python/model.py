@@ -1,25 +1,28 @@
-def remplir(t):
-    list1 = list(t);
-    return list1;
+def remplir_liste():
+    n = int(input('entrer le nombre '))
+    t = [0] * n
+    for i in range(n):
+        t[i] = int(input())
+    return list(t);
 
-def afficher(t):
+def afficher_liste(t):
     print(list(t))
 
 def remplir_matrice(d,p):
-    matrice = [[0]*d]*p
+    matrice = [[0 for _ in range(p)] for _ in range(d)] 
     for i in range(d):
         for j in range(p):
             matrice[i][j] = int(input(f"enter {i+1} {j+1}") )
-    for i in range(d):
-        for j in range(p):
-            print(matrice[i][j])
+    afficher_matrice(matrice)
+    return matrice
 
 # remplir_matrice(2,2)
 
 def afficher_matrice(matrice):
     for i in range(len(matrice)):
         for j in range(len(matrice[i])):
-            print(matrice[i][j])
+            print(matrice[i][j], end=" ")
+        print() 
 
 # afficher_matrice([[1,2,3],[3,4,5]])
 
